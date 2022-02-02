@@ -3,11 +3,15 @@
 {% block title %}Edit Project{% endblock %}
 
 {% block body %}
-    <h1>Edit Project</h1>
+<main class="d-flex flex-column align-items-center mw-100">
+    <h1 class="m-3 p-3 text-center">Modification du projet {{ project.name }}</h1>
+    <div class="w-100">
+    {{ include('project/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
+    </div>
 
-    {{ include('project/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('project_index') }}">back to list</a>
+    <a class="btn btn-dark m-3" href="{{ path('project_index') }}">Revenir à la liste des projets</a>
 
     {{ include('project/_delete_form.html.twig') }}
+
+</main>
 {% endblock %}

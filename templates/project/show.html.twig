@@ -3,43 +3,32 @@
 {% block title %}Project{% endblock %}
 
 {% block body %}
-    <h1>Tous mes projets</h1>
+<main class="d-flex flex-column align-items-center">
+    <h1 class="m-3 p-3 text-center">{{ project.name }}</h1>
 
-    <div class="container">
-        
+    <div class="container d-flex flex-row justify-content-center m-auto">
+        <div class="w-50">
+            <p class="description m-3">{{ project.description }}</p>
+            <p class="date_description font-weight-bold m-3">Fini le {{ project.date ? project.date|date('Y-m-d') : '' }}</p>
+            <div class="d-flex flex-row align-items-center">
+                <p class="m-3">Lien Github :</p>
+                <div class="w-25 m-3">
+                    <a target="_blank" href="{{ project.githubLink }}"><img class="w-50" src="{{ asset('build/images/signe-github.png') }}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 d-flex justify-content-center align-items-center">
+            <img class="w-75" src="{{ project.image }}">
+        </div>
     </div>
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ project.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ project.name }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ project.image }}" width="200px" height="150px"></td>
-            </tr>
-            <tr>
-                <th>GithubLink</th>
-                <td>{{ project.githubLink }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ project.description }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ project.date ? project.date|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="d-flex flex-column align-items-center">
+        <a class="btn btn-dark m-3" href="{{ path('project_index') }}">Revenir à la liste des projets</a>
+        {% if app.user %}
+            <a class="btn btn-dark m-3" href="{{ path('project_edit', {'id': project.id}) }}">Modifier le projet</a>
+            {{ include('project/_delete_form.html.twig') }}
+        {% else %}
+        {% endif %}
+    </div>
 
-    <a href="{{ path('project_index') }}">back to list</a>
-
-    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-
-    {{ include('project/_delete_form.html.twig') }}
+</main>
 {% endblock %}
