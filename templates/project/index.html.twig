@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Project index{% endblock %}
+
+{% block body %}
+    <h1>Tous mes projets</h1>
+
+    <div class="container">
+        {% for project in projects %}
+            <div class="container">
+                <h2>{{ project.name }}</h2>
+                <div class="image_projet">
+                    <img class="image" src="{{ project.image }}">
+                </div>
+                <p>Lien Github : <a href="{{ project.githubLink }}"><img src="{{ asset('build/images/favico.ico') }}"></a></p>
+                <p>{{ project.description }}</p>
+                <p>{{ project.date ? project.date|date('Y-m-d') : '' }}</p>
+                <a href="{{ path('project_show', {'id': project.id}) }}">Voir le projet</a>
+                {% if app.user %}
+                <a href="{{ path('project_edit', {'id': project.id}) }}">Modifier le projet</a>
+                {% else %}
+                {% endif %}
+            </div>
+        {% else %}
+            <h2>Pas de projets trouvés</h2>
+        {% endfor %}
+    </div>
+
+{% endblock %}
