@@ -3,27 +3,29 @@
 {% block title %}Project index{% endblock %}
 
 {% block body %}
-    <h1>Tous mes projets</h1>
+<main class="d-flex flex-column">
+    <h1 class="m-3 p-3 text-center">Tous mes projets</h1>
 
-    <div class="container">
+    <div class="container d-inline-flex p-3 col-lg-12 flex-wrap justify-content-center">
         {% for project in projects %}
-            <div class="container">
-                <h2>{{ project.name }}</h2>
-                <div class="image_projet">
-                    <img class="image" src="{{ project.image }}">
+            <div class="d-flex align-items-center card card-style m-3">
+                <img class="card-img-top p-5" src="{{ project.image }}" alt="projet">
+                <h2 class="card-title text-center m-3">{{ project.name }}</h2>
+                <div class="text-center m-3">
+                    <p>Lien Github : <a target="_blank" href="{{ project.githubLink }}"><img class="w-25" src="{{ asset('build/images/signe-github.png') }}"></a></p>
                 </div>
-                <p>Lien Github : <a href="{{ project.githubLink }}"><img src="{{ asset('build/images/favico.ico') }}"></a></p>
-                <p>{{ project.description }}</p>
-                <p>{{ project.date ? project.date|date('Y-m-d') : '' }}</p>
-                <a href="{{ path('project_show', {'id': project.id}) }}">Voir le projet</a>
-                {% if app.user %}
-                <a href="{{ path('project_edit', {'id': project.id}) }}">Modifier le projet</a>
-                {% else %}
-                {% endif %}
+                <div class="d-inline-flex justify-center text-center m-3">
+                    <a class="btn btn-dark m-3" href="{{ path('project_show', {'id': project.id}) }}">Voir le projet</a>
+                    {% if app.user %}
+                        <a class="btn btn-dark m-3" href="{{ path('project_edit', {'id': project.id}) }}">Modifier le projet</a>
+                    {% else %}
+                    {% endif %}
+                </div>
             </div>
         {% else %}
             <h2>Pas de projets trouvés</h2>
         {% endfor %}
     </div>
+</main>
 
 {% endblock %}
