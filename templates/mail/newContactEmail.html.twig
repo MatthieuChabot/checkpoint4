@@ -1,0 +1,10 @@
+{% extends 'layoutEmail.html.twig' %}
+
+{% block body %}
+    <h1>Votre demande sur le site MatthieuChabot.fr</h1>
+    <p class="m-3">Bonjour {{ mail.firstName }} {{ mail.lastName }}</p>
+    <p class="m-3">Votre demande envoyée avec l'email suivant : {{ mail.email }} a bien été envoyée.</p>
+    <p class="m-3 p-3">Votre demande :<br>
+    {{ mail.demande }}
+    </p>
+{% endblock %}
