@@ -12,3 +12,25 @@ import './styles/app.scss';
 import './bootstrap';
 
 require('bootstrap');
+
+const project = document.getElementById("project");
+const project_more = document.getElementById("project_more");
+
+const profile = document.getElementById("profile");
+const profile_more = document.getElementById("profile_more");
+
+project.addEventListener("click", function () {
+    if (project_more.className === 'd-none') {
+        project_more.className = 'd-flex';
+    } else {
+        project_more.className = 'd-none';
+    }
+});
+
+profile.addEventListener("click", function () {
+    if (profile_more.className === 'd-none') {
+        profile_more.className = 'd-flex';
+    } else {
+        profile_more.className = 'd-none';
+    }
+});

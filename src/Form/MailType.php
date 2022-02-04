@@ -30,7 +30,7 @@ class MailType extends AbstractType
                 'attr' => ['class' => ''],
             ])
             ->add('demande', TextareaType::class, [
-                'label' => 'Email : ',
+                'label' => 'Demande : ',
                 'required' => true,
                 'attr' => ['class' => ''],
             ]);

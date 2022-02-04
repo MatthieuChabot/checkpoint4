@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+<h1 class="m-3 p-3 text-center">Mon profil</h1>
+<div class="row d-flex justify-content-center mb-3">
+    <div class="d-flex flex-column align-items-center col-lg-3 m-3">
+        <img class="rounded-circle" src="{{ asset('build/images/web-marketing-min.jpg') }}" alt="web-marketing" width="140" height="140">
+        <h2 class="m-3">Web-marketing</h2>
+        <p class="text-center">J'ai effectué un Bachelor 3 en Web-Marketin au sein de l'école privée ESCEN. cela m'a permis d'acquérir plusieurs compétences en passant par le marketing, le commerce ou encore le code.</p>
+    </div>
+    <div class="d-flex flex-column align-items-center col-lg-3 m-3">
+        <img class="rounded-circle" src="{{ asset('build/images/seo-min.jpg') }}" alt="seo" width="140" height="140">
+        <h2 class="m-3">SEO</h2>
+        <p class="text-center">Durant mes trois années de Bachelor, j'ai pu également apprendre le SEO ainsi que toutes ses dérives (SEA par exemple). J'ai pu développer cet aspect par le biais de deux ans en CDI dans une entreprise lyonnaise.</p>
+    </div>
+    <div class="d-flex flex-column align-items-center col-lg-3 m-3">
+        <img class="rounded-circle" src="{{ asset('build/images/web-developpment-min.jpg') }}" alt="web-developpment" width="140" height="140">
+        <h2 class="m-3">Web-developpment</h2>
+        <p class="text-center">À la suite de cette embauche, je me suis lancé dnas un monde assez proche de celui que je cotoyait avant : le développement web. J'y ai eu accès par le biais de la Wild Code Schoo où j'ai fait un cursus de 6 mois sur le langage PHP.</p>
+    </div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light php rounded-corners">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h2 class="display-4 font-weight-normal text-white">PHP</h2>
+        <p class="lead font-weight-normal text-white">Pilier de ma formation en web-developpement.<br>Utilisation de la POO ainsi que de Symfony.<br>Développement Back-End.</p>
+      </div>
+</div>
+
+    <div class="d-md-flex flex-md-equal mw-100 my-md-3 pl-md-3">
+      <div class="bg-light  pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-100 m-3 sql rounded-corners">
+        <div class="my-3 p-3">
+          <h2 class="display-5 text-white">SQL</h2>
+          <p class="lead text-white">Création de bases de données SQL</p>
+        </div>
+      </div>
+      <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-100 m-3 html-css rounded-corners">
+        <div class="my-3 py-3">
+          <h2 class="display-5 text-white">HTML/CSS</h2>
+          <p class="lead text-white">Création de templates et Front-end</p>
+        </div>
+      </div>
+    </div>
+
+<div class="row featurette p-5 parallax">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">Adobe <span class="text-white">Illustrator</span></h2>
+        <p class="lead">Utilisation d'Illustrator pour faire des visuels, îcones, posts pour les Réseaux Sociaux.<br>Utilisation personnelle pour faire du PolyArt ainsi que du dessin.<br>Utilisé également lors de la création de templates pour présentations ainsi que rendus professionnels.</p>
+    </div>
+    <div class="d-flex col-md-5 align-items-center">
+        <img class="featurette-image img-fluid mx-auto w-50" src="{{ asset('build/images/illustrator.png') }}" alt="Generic placeholder image">
+    </div>
+</div>
+
+<div class="row featurette p-5">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Adobe <span class="text-muted">Photoshop</span></h2>
+        <p class="lead">Utilisation de photoshop afin de faire du photoshop-montage,<br>des visuels, du détourage ainsi que de la retouche photo.</p>
+    </div>
+    <div class="d-flex col-md-5 order-md-1 align-items-center">
+        <img class="featurette-image img-fluid mx-auto w-50" src="{{ asset('build/images/photoshop.png') }}" alt="Generic placeholder image">
+    </div>
+</div>
+
+<div class="row featurette p-5 parallax">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">Adobe <span class="text-white">XD</span></h2>
+        <p class="lead">Utilisation d'Adobe XD afin de mettre en place des maquettes précises lors d'un projet donné. Utilisé également afin de créer un parcours client ainsi que pour<br>améliorer l'UX et l'UI d'un site web.</p>
+    </div>
+    <div class="d-flex col-md-5 align-items-center">
+        <img class="featurette-image img-fluid mx-auto w-50" src="{{ asset('build/images/xd.png') }}" alt="Generic placeholder image">
+    </div>
+</div>
+
+{% endblock %}

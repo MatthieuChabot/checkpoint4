@@ -1,11 +1,51 @@
 @import "~bootstrap/scss/bootstrap";
 
+.parallax {
+  background-image: url("../images/background.jpg");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.php {
+  background-image: url("../images/php-min.jpg");
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sql {
+  background-image: url("../images/sql-min.jpg");
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.html-css {
+  background-image: url("../images/html-css-min.jpg");
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rounded-corners {
+  border-radius: 10px;
+}
+
 .card-style {
   max-width: 20rem;
 }
+
 .description {
   text-align: justify;
 }
+
 .date_description {
   text-align: right;
 }

@@ -1,6 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Page d'Accueil{% endblock %}
 
 {% block body %}
+
+<div class="bg-dark p-3 text-center vw-100">
+    <div class="col-md-5 p-lg-5 mx-auto my-5 w-100">
+        <h1 class="display-4 font-weight-normal text-white">Bienvenue sur mon portfolio !</h1>
+        <p class="lead font-weight-normal text-white">Depuis ce site web, vous pourrez voir mes différentes compétences<br>ainsi que les difféerents projets auxquels j'ai pu participer.</p>
+    </div>
+</div>
+
+<div class="bg-light p-3 text-center">
+    <div class="col-md-5 p-lg-5 mx-auto my-5 w-100">
+        <h2 class="display-4 font-weight-normal">Découvrez mes projets</h2>
+        <p class="lead font-weight-normal">Vous voulez en savoir plus sur mes projets ?<br>Découvrez les dès maintenant en cliquant sur le bouton situé en dessous :</p>
+        <a class="btn btn-dark m-3" href="{{ path('project_index') }}">Voir les projets</a>
+        <button class="btn btn-dark m-3" id="project">En savoir plus</button>
+        <div class="d-flex text-center align-items-center justify-content-center m-3">
+            <p class="d-none" id="project_more">Vous pourrez découvrir le panel de projets que j'ai pu faire au sein de la Wild Code School<br>Que ce soit des projets de groupe, des Hackhathons ou encore des exercices.</p>
+        </div>
+    </div>
+</div>
+
+<div class="bg-dark p-3 text-center">
+    <div class="col-md-5 p-lg-5 mx-auto my-5 w-100">
+        <h2 class="display-4 font-weight-normal text-white">Découvrez mon profil</h2>
+        <p class="lead font-weight-normal text-white">Vous voulez en savoir sur mon profil et mes compétences en général ?<br>Découvrez les dès maintenant en cliquant sur le bouton situé en dessous :</p>
+        <a class="btn btn-light m-3" href="{{ path('profile') }}">Voir mon profil</a>
+        <button class="btn btn-light m-3" id="profile" onclick="display()">En savoir plus</button>
+        <div class="d-flex text-white text-center align-items-center justify-content-center m-3">
+            <p class="d-none" id="profile_more">Vous pourrez découvrir mes différentes compétences, en passant par le SEO<br>et le développement web en PHP ou encore la suite Adobe et quelques-un de ses produits.</p>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light p-3 text-center">
+    <div class="col-md-5 p-lg-5 mx-auto my-5 w-100">
+        <h2 class="display-4 font-weight-normal">Besoin de me contacter ?</h2>
+        <p class="lead font-weight-normal">Vous pourrez m'envoyer un e-mail en remplissant le formulaire situé sur la page suivante<br>Accédez-y en cliquant sur le bouton en dessous !</p>
+        <a class="btn btn-dark m-3" href="{{ path('contact_new') }}">M'envoyer un e-mail</a>
+    </div>
+</div>
+
+
 {% endblock %}
