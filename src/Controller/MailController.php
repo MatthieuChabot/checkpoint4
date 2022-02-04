@@ -29,15 +29,12 @@ class MailController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($mail);
-            $new_mail = (array)$mail;
-            $implode_new_mail = implode(" ", $new_mail);
-            $explode_new_mail = explode(" ", $implode_new_mail);
 
             $entityManager->flush();
 
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))
-                ->to("$explode_new_mail[3]")
+                ->to($mail->getEmail())
                 ->subject('Votre demande sur le site MatthieuChabot.fr')
                 ->html($this->renderView('Mail/newContactEmail.html.twig', ['mail' => $mail]));
 
